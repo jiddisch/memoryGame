@@ -1,0 +1,10 @@
+<ion-content padding>
+  <canvas #canvas1 (click)="checkAnswer(0)"></canvas>
+  <canvas #canvas2 (click)="checkAnswer(1)"></canvas>
+  <canvas #canvas3 (click)="checkAnswer(2)"></canvas>
+  <canvas #canvas4 (click)="checkAnswer(3)"></canvas>
+
+  <div class="ion-canvas">
+    <ion-button expand="block" (click)=playAgain()>Play again</ion-button>
+  </div>
+</ion-content>

@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
 import { HomePage } from './home.page';
-import { WindowService } from '../services/window/window.service';
+import {  } from '../services/window/window.service';
 
 @NgModule({
   imports: [
@@ -20,6 +19,6 @@ import { WindowService } from '../services/window/window.service';
     ])
   ],
   declarations: [HomePage],
-  providers: [WindowService]
+  providers: []
 })
 export class HomePageModule {}
