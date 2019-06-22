@@ -30,7 +30,7 @@ export class ModalAfterResultPage {
   showBanner() {
     const bannerConfig: AdMobFreeBannerConfig = {
         autoShow: true,
-        id: 'ca-app-pub-5654307421760048~2423783592'
+        id: 'ca-app-pub-5654307421760048/9963362268'
     };
     this.adMobFree.banner.config(bannerConfig);
     this.adMobFree.banner.prepare();
