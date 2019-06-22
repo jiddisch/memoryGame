@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WindowService } from './services/window/window.service';
+import { LevelService } from './services/level/level.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { WindowService } from './services/window/window.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    WindowService
+    WindowService,
+    LevelService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ResultPage } from './result.page';
-import { ModalAfterResultPage } from '../modal-after-result/modal-after-result.page';
+import { ModalAfterResultPage } from './modal-after-result.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ResultPage
+    component: ModalAfterResultPage
   }
 ];
 
@@ -22,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ResultPage, ModalAfterResultPage],
-  entryComponents: [ModalAfterResultPage]
+  declarations: [ModalAfterResultPage]
 })
-export class ResultPageModule {}
+export class ModalAfterResultPageModule {}

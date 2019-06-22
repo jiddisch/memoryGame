@@ -1,10 +1,18 @@
 <ion-content padding>
-  <canvas #canvas1 (click)="checkAnswer(0)"></canvas>
-  <canvas #canvas2 (click)="checkAnswer(1)"></canvas>
-  <canvas #canvas3 (click)="checkAnswer(2)"></canvas>
-  <canvas #canvas4 (click)="checkAnswer(3)"></canvas>
+  <ion-row>
+    <ion-text>Level: {{level}}</ion-text>
+  </ion-row>
 
-  <div class="ion-canvas">
-    <ion-button expand="block" (click)=playAgain()>Play again</ion-button>
-  </div>
+  <ion-row>
+    <canvas #canvas1 (click)="checkAnswer(0)"></canvas>
+    <canvas #canvas2 (click)="checkAnswer(1)"></canvas>
+    <canvas #canvas3 (click)="checkAnswer(2)"></canvas>
+    <canvas #canvas4 (click)="checkAnswer(3)"></canvas>
+    <canvas #canvas5 (click)="checkAnswer(4)"></canvas>
+    <canvas #canvas6 (click)="checkAnswer(5)"></canvas>
+    <canvas #canvas7 (click)="checkAnswer(6)"></canvas>
+    <canvas #canvas8 (click)="checkAnswer(7)"></canvas>
+    <canvas #canvas9 (click)="checkAnswer(8)"></canvas>
+    <canvas #canvas10 (click)="checkAnswer(9)"></canvas>
+  </ion-row>
 </ion-content>

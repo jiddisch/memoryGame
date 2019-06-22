@@ -1,0 +1,18 @@
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title *ngIf="isSuccess">Success!</ion-card-title>
+        <ion-card-title *ngIf="!isSuccess">Faild!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text>You have faild to completed level {{level}}</ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <div>
+    <ion-button color="primary" expand="block" routerLink="/play" (click)=playAgain()>Play again</ion-button>
+    <ion-button color="primary" expand="block" routerLink="/play" (click)=levelUp() *ngIf="isSuccess">Level Up </ion-button>
+  </div>
+</ion-footer>
