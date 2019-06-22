@@ -13,7 +13,7 @@
 
 <ion-footer>
   <div>
-    <ion-button color="primary" expand="block" routerLink="/play" (click)=playAgain()>Play again</ion-button>
-    <ion-button color="primary" expand="block" routerLink="/play" (click)=levelUp() *ngIf="isSuccess">Level Up </ion-button>
+    <div class="round-btn" color="primary" routerLink="/play" (click)=playAgain()>Play again</div>
+    <div class="round-btn" color="primary" expand="block" routerLink="/play" (click)=levelUp() *ngIf="isSuccess">Level Up </div>
   </div>
 </ion-footer>

@@ -1,5 +1,14 @@
-<ion-content padding></ion-content>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header padding>Adjust Speed</ion-list-header>
+    <ion-text><div class="current-speed">Current speed: {{speed}}</div></ion-text>
+    <ion-range min="500" max="1500" pin="true" color="primary" name="speed" [value]="speed" (ionChange)="speedChanged($event)">
+      <ion-label slot="start">500</ion-label>
+      <ion-label slot="end">1500</ion-label>
+    </ion-range>
+  </ion-list>
+</ion-content>
 
 <ion-footer>
-  <ion-button expand="block" (click)=goToPlay()>Play</ion-button>
+  <div class="round-btn" expand="block" (click)=goToPlay()>Play</div>
 </ion-footer>

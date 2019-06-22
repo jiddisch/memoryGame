@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WindowService } from './services/window/window.service';
 import { LevelService } from './services/level/level.service';
+import { SpeedService } from './services/speed/speed.service';
 import { AdMobFree } from '@ionic-native/admob-free/ngx';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AdMobFree } from '@ionic-native/admob-free/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     WindowService,
     LevelService,
-    AdMobFree
+    AdMobFree,
+    SpeedService
   ],
   bootstrap: [AppComponent]
 })

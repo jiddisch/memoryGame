@@ -3,7 +3,7 @@ import { WindowService } from '../services/window/window.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { IcanvasArea } from 'src/app/interfaces';
 import { LevelService } from '../services/level/level.service';
-import { Observable } from 'rxjs';
+import { SpeedService } from '../services/speed/speed.service';
 
 @Component({
   selector: 'app-play',
@@ -22,10 +22,22 @@ export class PlayPage {
   counter: number;
   public level: number;
   private interval;
+  private speed: number;
 
-  constructor(private winRef: WindowService, private router: Router, private levelService: LevelService) { }
+  constructor(
+    private winRef: WindowService,
+    private router: Router,
+    private levelService: LevelService,
+    private speedService: SpeedService) { }
 
   ionViewWillEnter(): void {
+    this.speedService.speed$.subscribe((res) => {
+      this.speed = res;
+
+      this.interval = setInterval(() => {
+        this.play();
+      }, this.speed);
+    });
     this.canvasArea = {width: this.winRef.nativeWindow.innerWidth - 16 - 16, height: this.winRef.nativeWindow.innerHeight - 60};
     this.colors = ['#ff6633', '#ffb399', '#ff33ff', '#ffff99', '#00b3b6', '#b6b333', '#3366b6', '#999966', '#99ff99', '#b34d4d', '#80b300',
     '#809900', '#b6b3b3', '#6680b3', '#66991a', '#ff99b6', '#ccff1a', '#ff1a66', '#b6331a', '#33ffcc', '#66994d', '#b366cc', '#4d8000',
@@ -39,9 +51,6 @@ export class PlayPage {
     this._CANVAS.width = this.canvasArea.width;
     this._CANVAS.height = this.canvasArea.height;
     this.setupCanvas();
-    this.interval = setInterval(() => {
-      this.play();
-    }, 1000);
   }
 
   ionViewDidEnter() {
