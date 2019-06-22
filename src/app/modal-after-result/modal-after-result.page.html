@@ -5,7 +5,8 @@
         <ion-card-title *ngIf="!isSuccess">Faild!</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-text>You have faild to completed level {{level}}</ion-text>
+        <ion-text *ngIf="isSuccess">You have successfully completed level {{level}}</ion-text>
+        <ion-text *ngIf="!isSuccess">You have faild to completed level {{level}}</ion-text>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WindowService } from './services/window/window.service';
 import { LevelService } from './services/level/level.service';
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { LevelService } from './services/level/level.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     WindowService,
-    LevelService
+    LevelService,
+    AdMobFree
   ],
   bootstrap: [AppComponent]
 })
