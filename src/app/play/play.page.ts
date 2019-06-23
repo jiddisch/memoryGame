@@ -39,11 +39,7 @@ export class PlayPage {
       }, this.speed);
     });
     this.canvasArea = {width: this.winRef.nativeWindow.innerWidth - 16 - 16, height: this.winRef.nativeWindow.innerHeight - 60};
-    this.colors = ['#ff6633', '#ffb399', '#ff33ff', '#ffff99', '#00b3b6', '#b6b333', '#3366b6', '#999966', '#99ff99', '#b34d4d', '#80b300',
-    '#809900', '#b6b3b3', '#6680b3', '#66991a', '#ff99b6', '#ccff1a', '#ff1a66', '#b6331a', '#33ffcc', '#66994d', '#b366cc', '#4d8000',
-    '#b33300', '#cc80cc', '#66664d', '#991aff', '#b666ff', '#4db3ff', '#1ab399', '#b666b3', '#33991a', '#cc9999', '#b3b31a', '#00b680',
-    '#4d8066', '#809980', '#b6ff80', '#1aff33', '#999933', '#ff3380', '#cccc00', '#66b64d', '#4d80cc', '#9900b3', '#b64d66', '#4db380',
-    '#ff4d4d', '#99b6b6', '#6666ff'];
+    this.colors = ['#008000', '#ffc0cb', '#ffff00', '#0000ff', '#808080', '#ffa500', '#a52a2a', '#4b0082', '#800080', 'red'];
     this.myColors = [];
     this.orderColors = [];
     this.counter = 0;

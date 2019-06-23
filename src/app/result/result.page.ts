@@ -95,9 +95,11 @@ export class ResultPage {
     modal.onDidDismiss().then((detail: OverlayEventDetail) => {
       this.isCorrect = [];
       this.numOfClick = -1;
-      if (detail !== null) {
-        if (detail.data) {
+      if (detail !== null && detail.data !== null) {
+        if (detail.data === true) {
           this.levelService.setLevel(this.level = this.level + 1);
+        } else {
+          this.levelService.setLevel(this.level = this.level - 1);
         }
       }
     });

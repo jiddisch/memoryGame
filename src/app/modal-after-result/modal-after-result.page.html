@@ -13,7 +13,19 @@
 
 <ion-footer>
   <div>
-    <div class="round-btn" color="primary" routerLink="/play" (click)=playAgain()>Play again</div>
-    <div class="round-btn" color="primary" expand="block" routerLink="/play" (click)=levelUp() *ngIf="isSuccess">Level Up </div>
+    <div class="round-btn" color="primary" routerLink="/play" (click)=playAgain()>
+      <ion-icon name="play"></ion-icon>
+      <span class="round-btn__text">Play again</span>
+    </div>
+      
+    <div class="round-btn" color="primary" expand="block" routerLink="/play" *ngIf="level > 2" (click)=levelUp(false)>
+      <ion-icon name="arrow-down"></ion-icon>
+      <span class="round-btn__text">Level Down</span>
+    </div>
+
+    <div class="round-btn" color="primary" expand="block" routerLink="/play" (click)=levelUp(true) *ngIf="isSuccess">
+      <ion-icon name="arrow-up"></ion-icon>
+      <span class="round-btn__text">Level Up</span>
+    </div>
   </div>
 </ion-footer>

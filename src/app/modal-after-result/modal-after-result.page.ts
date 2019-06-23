@@ -41,11 +41,11 @@ export class ModalAfterResultPage {
   }
 
   playAgain() {
-    this.closeModal(false);
+    this.closeModal(null);
   }
 
-  levelUp() {
-    this.closeModal(true);
+  levelUp(bool: boolean) {
+    this.closeModal(bool);
   }
 
 }
