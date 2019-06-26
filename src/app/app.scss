@@ -1,20 +1,27 @@
 .round-btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: blue;
     color: #fff;
-    padding: 31px 6px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    margin: 34px 64px;
+    justify-content: center;
+    padding: 10px;
+    margin: 2px;
 
     &__text {
-        font-size: 1.2rem;
+        font-size: .7rem;
         margin-top: 6px;
     }
 
     ion-icon {
         align-self: center;
+        position: relative;
+        top: 2px;
+        margin-right: 6px;
     }
+}
+
+ion-icon[name="play"] {
+    font-size: .8rem;
+    position: relative;
+    top: 2px;
 }

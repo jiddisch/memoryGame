@@ -1,4 +1,4 @@
 export interface IcanvasArea {
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
 }

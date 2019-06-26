@@ -10,8 +10,23 @@
 </ion-content>
 
 <ion-footer>
-  <div class="round-btn"(click)=goToPlay()>
-    <ion-icon name="play"></ion-icon>
-    <span class="round-btn__text">Play</span>
-  </div>
+
+
+<ion-grid>
+  <ion-row>
+
+    <ion-col class="round-btn"(click)=goToPlay()>
+      <ion-row>
+        <ion-col size="3">
+            <ion-icon name="play"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <span class="round-btn__text">Play</span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+  
 </ion-footer>

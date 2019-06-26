@@ -40,40 +40,42 @@ export class ResultPage {
 
   ionViewDidEnter() {
     this.isCorrect = [];
-    this.levelService.level$.subscribe((res) => {
+    this.levelService.level$.subscribe((res: number) => {
       this.level = res;
-      this.canvasArea = {
-        width: this.winRef.nativeWindow.innerWidth / 2 - 16,
-        height: this.winRef.nativeWindow.innerHeight / 2 - 22 - 36
-      };
+      this.canvasArea = {};
+
+      switch (res) {
+        case 2:
+          this.canvasArea.width = this.winRef.nativeWindow.innerWidth / 2 - 16;
+          this.canvasArea.height = this.winRef.nativeWindow.innerHeight - 50;
+          break;
+        case 3:
+        case 4:
+          this.canvasArea.width = this.winRef.nativeWindow.innerWidth / 2 - 16;
+          this.canvasArea.height = this.winRef.nativeWindow.innerHeight / 2 - 46;
+          break;
+        case 5:
+        case 6:
+          this.canvasArea.width = this.winRef.nativeWindow.innerWidth / 2 - 16;
+          this.canvasArea.height = this.winRef.nativeWindow.innerHeight / 3 - 16;
+          break;
+        case 7:
+        case 8:
+          this.canvasArea.width = this.winRef.nativeWindow.innerWidth / 2 - 16;
+          this.canvasArea.height = this.winRef.nativeWindow.innerHeight / 4 - 12;
+          break;
+        case 9:
+        case 10:
+          this.canvasArea.width = this.winRef.nativeWindow.innerWidth / 2 - 16;
+          this.canvasArea.height = this.winRef.nativeWindow.innerHeight / 5 - 4;
+          break;
+      }
 
       this.canvasQL.toArray().forEach((element, i) => {
         if (i + 1 <= this.level) {
           const ctx = this.setupCanvas(element.nativeElement);
           this.canvasQL.toArray()[i].nativeElement.setAttribute('data-color', ctx.fillStyle);
-          if (i === 0) {
-            ctx.fillRect(0, 0, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 1) {
-            ctx.fillRect(10, 0, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 2 && res > 2) {
-            ctx.fillRect(0, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 3 && res > 3) {
-            ctx.fillRect(10, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 4 && res > 4) {
-            ctx.fillRect(0, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 5 && res > 5) {
-            ctx.fillRect(10, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 6 && res > 6) {
-            ctx.fillRect(0, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 7 && res > 7) {
-            ctx.fillRect(10, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 8 && res > 8) {
-            ctx.fillRect(0, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 9 && res > 9) {
-            ctx.fillRect(10, 10, this.canvasArea.width, this.canvasArea.height);
-          } else if (i === 10 && res > 10) {
-            ctx.fillRect(0, 10, this.canvasArea.width, this.canvasArea.height);
-          }
+          ctx.fillRect(0, 0, this.canvasArea.width, this.canvasArea.height);
           const index = this.myColors.indexOf(ctx.fillStyle);
           this.myColors.splice(index, 1);
         }
