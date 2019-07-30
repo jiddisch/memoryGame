@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
-import { Observable } from 'rxjs';
 import { LevelService } from '../services/level/level.service';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
 
@@ -30,13 +29,15 @@ export class ModalAfterResultPage {
   showBanner() {
     const bannerConfig: AdMobFreeBannerConfig = {
         autoShow: true,
+        overlap: false,
         id: 'ca-app-pub-5654307421760048/9963362268'
     };
     this.adMobFree.banner.config(bannerConfig);
-    this.adMobFree.banner.prepare();
+    this.adMobFree.banner.prepare().catch(e => alert(e));
 }
 
   async closeModal(isLevelUp: boolean) {
+    this.adMobFree.banner.remove();
     await this.modalController.dismiss(isLevelUp);
   }
 
